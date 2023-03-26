@@ -1,9 +1,54 @@
 import React from 'react';
 import './testimonial.css';
+import AVTR1 from '../../assets/avatar1.jpg'
+import AVTR2 from '../../assets/avatar2.jpg'
+import AVTR3 from '../../assets/avatar3.jpg'
+import AVTR4 from '../../assets/avatar4.jpg'
+
+const data = [
+  {
+    avatar: AVTR1,
+    name: 'Eren yeager',
+    review: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, deserunt. Consequatur inventore eius iste vero a recusandae facilis cupiditate odio voluptates! Porro voluptatem nostrum maiores! Veritatis temporibus autem blanditiis obcaecati laboriosam pariatur. Repellendus, nam dolore!'
+  },
+
+  {
+    avatar: AVTR2,
+    name: 'Zoro Taro',
+    review: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, deserunt. Consequatur inventore eius iste vero a recusandae facilis cupiditate odio voluptates! Porro voluptatem nostrum maiores! Veritatis temporibus autem blanditiis obcaecati laboriosam pariatur. Repellendus, nam dolore!'
+  },
+
+  {
+    avatar: AVTR3,
+    name: 'Sasuke Uchiha',
+    review: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, deserunt. Consequatur inventore eius iste vero a recusandae facilis cupiditate odio voluptates! Porro voluptatem nostrum maiores! Veritatis temporibus autem blanditiis obcaecati laboriosam pariatur. Repellendus, nam dolore!'
+  },
+
+  {
+    avatar: AVTR4,
+    name: 'Naruto Uzumaki',
+    review: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, deserunt. Consequatur inventore eius iste vero a recusandae facilis cupiditate odio voluptates! Porro voluptatem nostrum maiores! Veritatis temporibus autem blanditiis obcaecati laboriosam pariatur. Repellendus, nam dolore!'
+  },
+]
 
 const Testimonials = () => {
   return (
-    <section id='testimonials'>Testimonials</section>
+    <section id='testimonials'>
+      <h5>Review from clients</h5>
+      <h2>Testimonials</h2>
+
+      <div className="container testimonials__container">
+        {data.map(({avatar, name , review}, index)=>{
+          return(<article key={index} className="testimonial">
+          <div className="client__avatar">
+            <img src={avatar} alt="Avatar One" />
+          </div>
+           <h5 className='client__name'>{name}</h5>
+            <small className='client__review'>{review}</small>
+        </article>) 
+        })}
+      </div>
+    </section>
   )
 }
 
