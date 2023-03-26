@@ -66,7 +66,7 @@ const Portfolio = () => {
 
       <div className="container portfolio__container">
        {
-        data.map(({id , title , image , github , demo})=>{
+        data.map(({id ,title , image , github , demo})=>{
           return(
             <article key={id} className="portfolio__item">
             <div className="portfolio__item-image">
